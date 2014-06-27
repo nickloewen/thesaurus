@@ -36,3 +36,26 @@ Quick script that takes raw input and replaces each word with a synonym.
 ### Stuff to Implement
 
 * potentially filter out results which are too far from original (see the [WordNet Interface guide](http://www.nltk.org/howto/wordnet.html) for reference)
+
+### To do
+
+* prevent it from changing basic words (a, the, of, in...)
+
+    preserve = ["a", "the", "of", "in"]
+
+    # ...
+
+    if token not in preserve:
+        # grab from thesaurus
+
+* strip out underscores
+* randomize output?
+* actually print each output
+* change words starting at end:
+
+    a place of mind
+    a place of head
+    a place of forehead
+    a location of forehead
+    a space of forehead
+    a vicinity of forehead
