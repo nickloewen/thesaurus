@@ -2,7 +2,7 @@
 
 This script replaces words from the text given to it with their synonyms, according to a permutation method chosen by the user.
 
-Some day it will be modular and extensible, so that it is easy to write and slot in a new permutation algorithm without changing any of the surrounding system.
+**Requires [NLTK](http://www.nltk.org/) and the Wordnet corpus (run `nltk.download()` from the interpreter to download WN).**
 
 ## Example (change-from-end method)
 
@@ -67,23 +67,21 @@ Some day it will be modular and extensible, so that it is easy to write and slot
     A commit of bear in mind.
     A send of bear in mind.
 
-## Resources
-
-* [basic thesaurus script](http://stackoverflow.com/questions/5534926/to-find-synonyms-defintions-and-example-sentences-using-wordnet)
-
-### Stuff to Implement
-
-* potentially filter out results which are too far from original (see the [WordNet Interface guide](http://www.nltk.org/howto/wordnet.html) for reference)
-
-### Design Idea
+## Design Idea
 
 The program takes in input, permutes it, then returns the output. Regardless of what approach is taken to permutation, the input and output steps are the same. The goal, therefore, is to construct a system where the input and output code is provided, and the permutation code easily slots in, so it can be created by anyone, without too much knowledge of (or adjustment to) the rest of the program.
 
-### To Do
+## To Do
 
 * actually print each output for the all-possibilities permutation
-* 
+* allow limiting number of results
+    * by hard-coded number (ie, "first 10")
+    * by closeness of synonym to original word (see the [WordNet Interface guide](http://www.nltk.org/howto/wordnet.html) for reference)
 
-### Notes
+## Notes
 
 * you must always be able to trust that the first synonyms returned by the create_synonyms functions are the original words
+
+## Resources
+
+* [basic thesaurus script](http://stackoverflow.com/questions/5534926/to-find-synonyms-defintions-and-example-sentences-using-wordnet)
