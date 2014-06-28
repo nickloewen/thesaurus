@@ -1,33 +1,71 @@
 # Thesaurus
 
-Quick script that takes raw input and replaces each word with a synonym.
+This script replaces words from the text given to it with their synonyms, according to a permutation method chosen by the user.
 
-## Example
+Some day it will be modular and extensible, so that it is easy to write and slot in a new permutation algorithm without changing any of the surrounding system.
+
+## Example (change-from-end method)
 
     > a place of mind
 
-    A set of judgement
-    a shoes of head
-    type_A office of take_care
-    deoxyadenosine_monophosphate point of creative_thinker
-    adenine grade of beware
-    vitamin_A commit of mind
-    antiophthalmic_factor site of idea
-    angstrom_unit rank of psyche
-    group_A seat of brain
-    angstrom rate of thinker
-    amp identify of heed
-    ampere blank_space of bear_in_mind
-    axerophthol lieu of nous
-    axerophthol home of judgment
-    axerophthol come_out of intellect
-    axerophthol space of listen
-    axerophthol localise of listen
-    axerophthol send of listen
-    axerophthol station of listen
-    axerophthol place of listen
-    axerophthol topographic_point of listen
-    axerophthol locate of listen
+    A place of mind.
+    A place of head.
+    A place of brain.
+    A place of psyche.
+    A place of nous.
+    A place of judgment.
+    A place of judgement.
+    A place of thinker.
+    A place of creative thinker.
+    A place of idea.
+    A place of intellect.
+    A place of take care.
+    A place of heed.
+    A place of listen.
+    A place of beware.
+    A place of bear in mind.
+    A topographic point of bear in mind.
+    A spot of bear in mind.
+    A property of bear in mind.
+    A stead of bear in mind.
+    A position of bear in mind.
+    A lieu of bear in mind.
+    A shoes of bear in mind.
+    A home of bear in mind.
+    A post of bear in mind.
+    A berth of bear in mind.
+    A office of bear in mind.
+    A billet of bear in mind.
+    A situation of bear in mind.
+    A station of bear in mind.
+    A seat of bear in mind.
+    A plaza of bear in mind.
+    A piazza of bear in mind.
+    A space of bear in mind.
+    A blank space of bear in mind.
+    A put of bear in mind.
+    A set of bear in mind.
+    A pose of bear in mind.
+    A lay of bear in mind.
+    A rate of bear in mind.
+    A rank of bear in mind.
+    A range of bear in mind.
+    A order of bear in mind.
+    A grade of bear in mind.
+    A locate of bear in mind.
+    A site of bear in mind.
+    A come in of bear in mind.
+    A come out of bear in mind.
+    A target of bear in mind.
+    A aim of bear in mind.
+    A direct of bear in mind.
+    A point of bear in mind.
+    A identify of bear in mind.
+    A localize of bear in mind.
+    A localise of bear in mind.
+    A invest of bear in mind.
+    A commit of bear in mind.
+    A send of bear in mind.
 
 ## Resources
 
@@ -37,25 +75,15 @@ Quick script that takes raw input and replaces each word with a synonym.
 
 * potentially filter out results which are too far from original (see the [WordNet Interface guide](http://www.nltk.org/howto/wordnet.html) for reference)
 
-### To do
+### Design Idea
 
-* prevent it from changing basic words (a, the, of, in...)
+The program takes in input, permutes it, then returns the output. Regardless of what approach is taken to permutation, the input and output steps are the same. The goal, therefore, is to construct a system where the input and output code is provided, and the permutation code easily slots in, so it can be created by anyone, without too much knowledge of (or adjustment to) the rest of the program.
 
-    preserve = ["a", "the", "of", "in"]
+### To Do
 
-    # ...
+* actually print each output for the all-possibilities permutation
+* 
 
-    if token not in preserve:
-        # grab from thesaurus
+### Notes
 
-* strip out underscores
-* randomize output?
-* actually print each output
-* change words starting at end:
-
-    a place of mind
-    a place of head
-    a place of forehead
-    a location of forehead
-    a space of forehead
-    a vicinity of forehead
+* you must always be able to trust that the first synonyms returned by the create_synonyms functions are the original words
